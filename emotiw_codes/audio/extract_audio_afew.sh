@@ -34,6 +34,7 @@ do
 	# eg2.ffmpeg -i video.mp4 -f mp3 -ab 192000 -vn music.mp3
 	# The -i option in the above command is simple: it is the path to the input file. The second option -f mp3 tells ffmpeg that the ouput is in mp3 format. 
 	# The third option i.e -ab 192000 tells ffmpeg that we want the output to be encoded at 192Kbps and -vn tells ffmpeg that we dont want video. The last 
-	# param is the name of the output file.
+	# param is the name of the output file.#
+	# shell字符串拼接只需将两个字符串放在一起
         ffmpeg -i $video -vn -acodec copy $D2NAME.wav
 done
