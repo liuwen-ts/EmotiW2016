@@ -32,13 +32,16 @@ from sklearn import svm
 import re
 from pylab import * 
 from sklearn.externals import joblib
+# 使用emobase配置文件可以提取1582个特征
 feat_length = 1582
     
     
 
 def get_feat(filename):
+    # readlines() 方法用于读取所有行(直到结束符 EOF)并返回列表，该列表可以由 Python 的 for... in ... 结构进行处理。如果碰到结束符 EOF 则返回空字符串。
     lines = open(filename).readlines()
     #print len(lines)
+    # 最后一行是特征值
     feat_str = lines[len(lines)-1]
     datas = re.split(',',feat_str[:-1])
     feat = np.zeros((1, feat_length))
@@ -54,6 +57,8 @@ def get_all_feats(file_dir):
     
     feats = np.zeros((file_count, feat_length))
     count = -1
+    # sorted() 函数对所有可迭代的对象进行排序操作。
+    # os.listdir()返回path指定的文件夹包含的文件或文件夹的名字的列表。 
     for fname in sorted(os.listdir(file_dir)):
         count += 1
         feat = get_feat(os.path.join(file_dir, fname))
