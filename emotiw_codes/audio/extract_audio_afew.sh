@@ -24,7 +24,7 @@ BNAME=`basename $NAME`
 for video in `find $NAME -type f -name '*.avi'`
 do
 	echo $video
-	
+	# cut用来从标准输入或文本文件中剪切列或域。-f field  指定剪切域数。-d  指定与空格和tab键不同的域分隔符。下面的命令指定域为"/"，-f表示第七个域
         VNAME=`echo $video | cut -d "/" -f7`
         #if [ ! -d "$D1NAME"]; then
         D2NAME=`echo $VNAME | cut -d "." -f1`
