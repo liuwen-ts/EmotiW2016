@@ -27,6 +27,7 @@ do
   	#  mkdir -m 755 $D1NAME
         #fi
 #        ../../SMILExtract -C ../../config/IS12_speaker_trait.conf -I $video -O $D2NAME.audio_feat.txt
+        # SMILExtract_Release  -C “配置文件” -I “要处理的音频的目录” -O “要保存特征向量的路径”
         ../../audio/SMILExtract -C ../../audio/emobase2010.conf -I $video -O $D2NAME.audio_feat.txt
 #	ffmpeg -i $video -r $FRAMES $D2NAME.%4d.jpg 
 done
