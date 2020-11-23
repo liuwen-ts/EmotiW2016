@@ -13,13 +13,18 @@ fi
 #  mkdir -m 755 "data"
 #fi
 
+# -m给这个目录加权限，755是默认权限
 mkdir -m 755 "../data/audio_ori_wav"
 cd "../data/audio_ori_wav"
+# $1 接收第一个参数，%.*：从最右边往左一直删到"."(去掉后缀)
 NAME=${1%.*}
+# basename 是去掉路径，只保留最后的文件名
 BNAME=`basename $NAME`
+# find在NAME目录中查找普通类型（- type f）的后缀是avi（- name 指定文件名）的文件
 for video in `find $NAME -type f -name '*.avi'`
 do
 	echo $video
+	
         VNAME=`echo $video | cut -d "/" -f7`
         #if [ ! -d "$D1NAME"]; then
         D2NAME=`echo $VNAME | cut -d "." -f1`
