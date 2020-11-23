@@ -9,6 +9,7 @@ subdirs =  dir(first_dir);
 for i = 3 : length(subdirs)
     strcat(first_dir,subdirs(i).name)
     audioinfo(strcat(first_dir,subdirs(i).name))
+    % y是读出数据。Fs为音频文件的采样率 
     [y, FS]=audioread(strcat(first_dir,subdirs(i).name));
     audiowrite(strcat(save_dir,subdirs(i).name),y,FS);
 end
