@@ -15,6 +15,8 @@ import os
 import numpy 
 from sklearn import svm
 import sys
+# sys.path可以动态的修改系统路径。模块需要处于python搜索路径中的目录里，才能被导入，但是我们不喜欢维护一个永久性的大目录，因为其他所有的python脚本和应用程序导入模块时，性能会被拖累。
+# sys.path.insert()可以让新添加的目录优于其他目录被import检查
 sys.path.insert(0, '../caffe/python/')
 import caffe
 import time
